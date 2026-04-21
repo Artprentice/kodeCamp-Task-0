@@ -18,25 +18,31 @@
 </head>
 
 <body>
-  <header class="container-fluid text-center">
-    <div class="row align-items-center">
-      <div class="col-sm">
-        <img src="images/logo.svg">
-      </div>
-      <nav class="col-sm">
-        <div class="navbar row">
-          <h4 class="col">Features</h4>
-          <h4 class="col">Pricing</h4>
-          <h4 class="col">Resources</h4>
-          </div>
-     </nav>
-      <div class="col">
-        <div class="row">
-          <div class="col"><h4>Login</h4></div>
-          <div class="col"><h4>Sign Up</h4></div>
+  <header class="container-fluid py-4">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid p-0">
+        <a class="navbar-brand" href="#">
+          <img src="images/logo.svg" alt="Shortly" height="32">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse mobile-menu" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Resources</a></li>
+          </ul>
+
+          <ul class="navbar-nav auth-links">
+            <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+            <li class="nav-item"><a class="nav-link btn btn-info text-black background-blue px-4 rounded-pill" href="#">Sign Up</a></li>
+          </ul>
         </div>
       </div>
-    </div>
+    </nav>
   </header>
 
   <main>
