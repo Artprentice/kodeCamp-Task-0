@@ -2,6 +2,11 @@ body {
   font-family: "Poppins", sans-serif;
   background-image: linear-gradient(to bottom, transparent 38%,hsl(0, 0%, 95%) 38%);
 }
+h1{
+  font-size: 4rem;
+  font-weight: 700;
+  color: hsl(260, 8%, 14%);
+}
 
 .short-bg{
   background-image: url('images/bg-shorten-desktop.svg');
@@ -16,13 +21,22 @@ h2{
   font-weight: 700;
 }
 
-.stats-text{
+p{
   color:  hsl(257, 7%, 63%)
 }
 
 .feature-card{
+  position: relative;
   background-color: white;
-  border-radius: 15px;
+}
+
+.feature-img{
+  padding: 20px;
+  border-radius: 50px;
+  position: absolute;
+  left: 30px;
+  top: -35px;
+  background-color: hsl(257, 27%, 26%);
 }
 
 
