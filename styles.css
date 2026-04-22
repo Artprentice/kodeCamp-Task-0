@@ -1,3 +1,18 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+
+.short-bg{
+  background-image: url('images/bg-shorten-desktop.svg');
+  background-size: cover;
+  background-position: center;
+  background-color: hsl(257, 27%, 26%);
+}
+
+
+/* For mobile screens (max-width: 767px) */
+@media (max-width: 767px) {
+  .short-bg {
+    background-image: url('images/bg-shorten-mobile.svg');
+  }
+}
