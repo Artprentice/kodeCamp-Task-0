@@ -58,36 +58,41 @@
     </div>
   </main>
   
-  <section class="container shorten-wrap short-bg p-4" >
+  <section class="container shorten-wrap short-bg p-4 rounded" >
     <form class="shorten-bar d-flex flex-column flex-lg-row gap-3" action="/submit" method="post">
       <input class="form-control" placeholder="Shorten a link here..." type="text" name="long-link">
       <button type="submit" class="btn btn-info text-white px-4">Shorten It!</button>
     </form>
   </section>
 
-  <div class="statistics">
-    <h2>Advanced Statistics</h2>
-    <p>Track how your links are performing across the web with our
-      advanced statistics dashboard.</p>
-  </div>
+  <section class="stats-section mt-5 pt-5">
+    <div class="container text-center">
+      <h2>Advanced Statistics</h2>
+      <p class="stats-text">Track how your links are performing across the web with our advanced statistics dashboard.</p>
 
-  <section class="features">
-    <div class="feature" id="recognition">
-      <h3>Brand Recognition</h3>
-      <p>Boost your brand recognition with each click. Generic links don't
-        mean a thing. Branded links help instil confidence in your content.</p>
-    </div>
-    <div class="feature" id="records">
-      <h3>Detailed Records</h3>
-      <p> Gain insights into who is clicking your links. Knowing when and where
-        people engage with your content helps inform better decisions.</p>
-    </div>
-    <div class="feature" id="customise">
-      <h3>Fully Customizable</h3>
-      <p> Improve brand awareness and content discoverability through customizable
-        links, supercharging audience engagement.</p>
+      <div class="row g-4 mt-5">
+        <div class="col-md-4">
+          <div class="feature-card">
+            <h3>Brand Recognition</h3>
+            <p>Boost your brand recognition with each click. Generic links don't mean a thing.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card feature-mid">
+            <h3>Detailed Records</h3>
+            <p>Gain insights into who is clicking your links and where they engage from.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card feature-last">
+            <h3>Fully Customizable</h3>
+            <p>Improve brand awareness and content discoverability through customizable links.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
+
   
   <section class="cta">
     <h2>Boost your links today</h2>
