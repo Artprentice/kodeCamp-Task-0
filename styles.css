@@ -1,6 +1,6 @@
 body {
   font-family: "Poppins", sans-serif;
-  background-image: linear-gradient(to bottom, transparent 38%,hsl(0, 0%, 95%) 38%);
+  background-image: linear-gradient(to bottom, transparent 35%,hsl(0, 0%, 95%) 35%);
 }
 h1{
   font-size: 4rem;
@@ -23,6 +23,18 @@ h2{
 
 p{
   color:  hsl(257, 7%, 63%)
+}
+
+.feature-section{
+  position: relative;
+}
+
+.blue-line{
+  position: absolute;
+  height: 20px;
+  width: 100%;
+  background-color: hsl(180, 66%, 49%);
+  top: 50%;
 }
 
 .feature-card{
@@ -48,9 +60,6 @@ p{
   background-color: hsl(260, 8%, 14%);
 }
 
-.footer-logo{
-  fill: white;
-}
 
 /* For mobile screens (max-width: 767px) */
 @media (max-width: 767px) {
@@ -60,4 +69,14 @@ p{
   .boost-cta{
     background-image: url("images/bg-boost-mobile.svg");
   }
+
+  .blue-line{
+    position: absolute;
+    height: 80%;
+    width: 20px;
+    background-color: hsl(180, 66%, 49%);
+    left: 50%;
+    top: 5%;
+  } 
+
 }
