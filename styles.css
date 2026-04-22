@@ -44,6 +44,14 @@ p{
   background-color: hsl(257, 27%, 26%);
 }
 
+.footer{
+  background-color: hsl(260, 8%, 14%);
+}
+
+.footer-logo{
+  fill: white;
+}
+
 /* For mobile screens (max-width: 767px) */
 @media (max-width: 767px) {
   .short-bg {
