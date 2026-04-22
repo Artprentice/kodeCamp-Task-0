@@ -1,5 +1,6 @@
 body {
   font-family: "Poppins", sans-serif;
+  background-image: linear-gradient(to bottom, transparent 38%,hsl(0, 0%, 95%) 38%);
 }
 
 .short-bg{
@@ -17,6 +18,11 @@ h2{
 
 .stats-text{
   color:  hsl(257, 7%, 63%)
+}
+
+.feature-card{
+  background-color: white;
+  border-radius: 15px;
 }
 
 
