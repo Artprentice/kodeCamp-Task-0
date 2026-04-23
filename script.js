@@ -16,13 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(links));
   }
 
-  //Rendering links, this clears the results area before re-adding everything. loop makes the page show every saved result instead of only the latest one
+  //Rendering links.
   function renderLinks() {
+    //this clears the results area before re-adding everything
     resultsContainer.innerHTML = '';
 
+    //loop makes the page show every saved result instead of only the latest one
     links.forEach((item, index) => {
       //This creates a brand-new div in JavaScript.
       const card = document.createElement('div');
+      // gives it the CSS class result-card for styling
       card.className = 'result-card';
 
       //puts HTML inside it
@@ -37,17 +40,24 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       `;
 
+      //Places the card inside the results container.
       resultsContainer.appendChild(card);
     });
 
+    //This finds every button with the class copy-btn then it loops through them so each button can get its own click behavior
     document.querySelectorAll('.copy-btn').forEach((button) => {
+      //When this button is clicked, run this code.” async tells JavaScript that we will use await inside this function
       button.addEventListener('click', async () => {
+        //button.dataset.index this reads the data-index value we put in the HTML a string convert to number "2"-2.
         const index = Number(button.dataset.index);
+        //links[index].short gets the short URL from the correct item in the array
         const text = links[index].short;
 
+        //“Try this action.” If it works, continue. If it fails, go to catch.
         try {
           await navigator.clipboard.writeText(text);
 
+          //This resets every button so only one button can say “Copied!” at a time. the page clearly show which one was copied.
           document.querySelectorAll('.copy-btn').forEach((btn) => {
             btn.textContent = 'Copy';
             btn.classList.remove('copied');
@@ -55,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           button.textContent = 'Copied!';
           button.classList.add('copied');
+          //If the browser cannot copy text for some reason, the app shows an alert
         } catch (err) {
           alert('Copy failed');
         }
@@ -65,14 +76,16 @@ document.addEventListener('DOMContentLoaded', () => {
   //This function sends the long URL to custom Vercel API route
   //Because my own endpoint is cleaner and makes it easier to manage the request before it reaches Clean URI
   async function shortenUrl(url) {
+    //asks a server for data with fetch
     const response = await fetch('/api/shorten', {
-      method: 'POST',//because we are sending data
+      method: 'POST',// postbecause we are sending data
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ url }),
     });//to send the URL as JSON
 
+    //The server sends back JSON, and this line turns it into a JavaScript object
     const data = await response.json();
 
     //if the API returns an error, stop and shows a useful message instead of silently failing
@@ -80,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
       throw new Error(data.error || 'Failed to shorten URL');
     }
 
+    //If everything worked, give back the shortened URL
     return data.result_url;
   }
 
@@ -96,9 +110,10 @@ document.addEventListener('DOMContentLoaded', () => {
       urlInput.classList.add('error-input');
       errorMessage.textContent = 'Please add a link';
       errorMessage.classList.remove('d-none');
-      return;
+      return;//prvents continuing with bad input
     }
 
+    //If the input is valid, remove the red border and hide the error
     urlInput.classList.remove('error-input');
     errorMessage.classList.add('d-none');
 
@@ -108,25 +123,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Calling the API and storing the result
     try {
-      submitButton.textContent = 'Shortening...';
+      submitButton.textContent = 'Shortening...';//This changes the button text while the app waits for the API. tells user something is going on
       const shortUrl = await shortenUrl(validUrl);//This waits for the short link to come back
 
+      //his adds the new link to the beginning of the array
       links.unshift({
         original: validUrl,
         short: shortUrl
       });//This adds the new item to the beginning of the array, so the newest link appears first
 
-      saveLinks();
-      renderLinks();
-      urlInput.value = '';
+      saveLinks();//saves new list to localStorage
+      renderLinks();//shows updated list on page
+      urlInput.value = '';//clear input box
     } catch (err) {
-      errorMessage.textContent = err.message;
-      errorMessage.classList.remove('d-none');
-      urlInput.classList.add('error-input');
+      errorMessage.textContent = err.message;//if anything goes wrong show error message
+      errorMessage.classList.remove('d-none');//make input red
+      urlInput.classList.add('error-input');//show error message
     } finally {
-      submitButton.textContent = 'Shorten It!';
+      submitButton.textContent = 'Shorten It!';//resets button text
     }
   });
 
-  renderLinks();
+  renderLinks();//This displays anything already saved in localStorage when the page first loads.
 });
