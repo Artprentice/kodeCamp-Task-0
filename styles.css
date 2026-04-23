@@ -99,7 +99,7 @@ p {
 
 .blue-line {
   position: absolute;
-  height: 20px;
+  height: 10px;
   width: 100%;
   background-color: hsl(180, 66%, 49%);
   top: 50%;
@@ -167,7 +167,7 @@ p {
   .blue-line {
     position: absolute;
     height: 100%;
-    width: 20px;
+    width: 10px;
     background-color: hsl(180, 66%, 49%);
     left: 50%;
     top: 0;
