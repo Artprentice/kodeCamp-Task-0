@@ -38,8 +38,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [solution here](https://github.com/Artprentice/kodeCamp-Task-0)
-- Live Site URL: [live site](https://urlshortner-jet-nine.vercel.app/)
+- Solution URL: [Git Repo](https://github.com/Artprentice/kodeCamp-Task-0)
+- Live Site URL: [urlshortner](https://urlshortner-jet-nine.vercel.app/)
 
 
 
@@ -70,6 +70,6 @@ used ai to expain error i got and walk me through debugging
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@ManuJr_dev](https://x.com/ManuJr_dev)
+
+- Frontend Mentor - [@Artprentice](https://www.frontendmentor.io/profile/Artprentice)
+- Twitter/X - [@ManuJr_dev](https://x.com/ManuJr_dev)
